@@ -2,6 +2,6 @@
     display: flex;
 }
 
-.grid{
+.container  .gridItem{
     flex: 1;
 }
