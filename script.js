@@ -24,7 +24,7 @@ function getUserInput(){
 function createGrid(gridSize){
     for (let i = 0; i<gridSize*gridSize; i++){
         var gridItem = document.createElement('div');
-        var flexBasic = (100/gridSize).toFixed(2);
+        var flexBasic = (100/gridSize).toFixed(4);
 
         gridItem.classList.add('gridItem');
         gridItem.textContent = '';
