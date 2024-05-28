@@ -3,7 +3,12 @@ createGrid(16);
 
 const button = document.querySelector('.button');
 button.addEventListener("click",()=>{
-    
+    container.innerHTML = '';
+    var gridSize = getUserInput();
+    if (!gridSize == null){
+        container.innerHTML = '';   
+    }
+    createGrid(gridSize);
 })
 
 function getUserInput(){
