@@ -5,17 +5,18 @@
     height: 960px;  
 }
 
-.container  .gridItem{
-    flex: 1 0 calc(6.25%); /* 100 % 16 rows*/
-    height: calc(6.25%); /* 100 % 16 columns*/
-    width: calc(6.25%);
+.container .gridItem{
+    flex: 1;
+    justify-content: center;
     box-sizing: border-box;
     border: 1px solid;
-    transition: background-color 1s ease;
+    transition: background-color 2s ease;
 }
+
 .button{
+    display: flex;
     margin: 20px;
-    padding: 20px;
+    padding: 10px 20px;
     font-size: 16px;
     text-align: center;
     justify-content: center;

@@ -1,35 +1,47 @@
 const container = document.querySelector('.container');
-console.log(container);
-
-var  square  = 16*16;
-for (let i = 0; i<square; i++){
-    var gridItem = document.createElement('div');
-    gridItem.classList.add('gridItem');
-    gridItem.textContent = '';
-    console.log(gridItem);
-    container.appendChild(gridItem);
-}
-
-const gridItems = document.querySelectorAll('.gridItem');
-gridItems.forEach(gridItem =>{
-    gridItem.addEventListener('mouseover',()=>{
-        gridItem.style.backgroundColor = 'red';
-    })
-    gridItem.addEventListener('mouseout',()=>{
-        gridItem.style.backgroundColor = '';
-    })
-})
+createGrid(16);
 
 const button = document.querySelector('.button');
 button.addEventListener("click",()=>{
-    function getUserInput(){
-        return prompt("Size of the new grid: ")
-    }
-    let gridSize = getUserInput();
-    console.log(gridSize);
-    while (gridSize > 100){
-        gridSize = getUserInput();
-        console.log(gridSize);
-    }    
+    
 })
+
+function getUserInput(){
+    let input = prompt("Size of the new grid: ");
+    console.log(input);
+    while (input > 100){
+        input = getUserInput();
+        console.log(input);
+    }
+    return input;
+}
+
+function createGrid(gridSize){
+    for (let i = 0; i<gridSize*gridSize; i++){
+        var gridItem = document.createElement('div');
+        var flexBasic = (100/gridSize).toFixed(2);
+
+        gridItem.classList.add('gridItem');
+        gridItem.textContent = '';
+        
+        gridItem.style.flex = '1 0 calc(' + flexBasic + '%)';
+        gridItem.style.width = 'calc(' + flexBasic + '%)';
+        gridItem.style.height = 'calc(' + flexBasic + '%)';
+        container.appendChild(gridItem);
+    } 
+    const gridItems = document.querySelectorAll('.gridItem');
+    gridItems.forEach(gridItem =>{
+        gridItem.addEventListener('mouseover',()=>{
+            gridItem.style.backgroundColor = 'red';
+        })
+        gridItem.addEventListener('mouseout',()=>{
+            gridItem.style.backgroundColor = '';
+        })
+    })
+}
+
+
+
+
+
 
