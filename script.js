@@ -9,3 +9,12 @@ for (let i = 0; i<square; i++){
     console.log(gridItem);
     container.appendChild(gridItem);
 }
+const gridItems = document.querySelectorAll('.gridItem');
+gridItems.forEach(gridItem =>{
+    gridItem.addEventListener('mouseover',()=>{
+        gridItem.style.backgroundColor = 'red';
+    })
+    gridItem.addEventListener('mouseout',()=>{
+        gridItem.style.backgroundColor = '';
+    })
+})

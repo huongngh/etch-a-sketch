@@ -5,8 +5,8 @@
 }
 
 .container  .gridItem{
-    flex: 1 0 calc(6.25%);
-    height: calc(6.25%);
+    flex: 1 0 calc(6.25%); /* 100 % 16 rows*/
+    height: calc(6.25%); /* 100 % 16 columns*/
     box-sizing: border-box;
     border: 1px solid;
 }
