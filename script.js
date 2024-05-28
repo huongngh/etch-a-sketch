@@ -19,3 +19,17 @@ gridItems.forEach(gridItem =>{
         gridItem.style.backgroundColor = '';
     })
 })
+
+const button = document.querySelector('.button');
+button.addEventListener("click",()=>{
+    function getUserInput(){
+        return prompt("Size of the new grid: ")
+    }
+    let gridSize = getUserInput();
+    console.log(gridSize);
+    while (gridSize > 100){
+        gridSize = getUserInput();
+        console.log(gridSize);
+    }    
+})
+
